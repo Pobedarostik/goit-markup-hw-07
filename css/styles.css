@@ -53,6 +53,12 @@ a {
   color: inherit;
 }
 
+a:hover,
+a:focus {
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
 .list {
   list-style: none;
 
@@ -66,28 +72,24 @@ img {
   height: auto;
 }
 
-.web,
-.studio {
-  font-family: Raleway;
+.hidden-title {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.header-two-level {
   font-weight: bold;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 36px;
+  line-height: 1.16;
   letter-spacing: 0.03em;
-  color: var(--accent-color);
-}
 
-.studio {
-  color: #000000;
-}
-
-.studio-footer {
-  color: var(--two-main-color);
-}
-
-a:hover,
-a:focus {
-  color: var(--accent-color);
-  cursor: pointer;
+  margin-bottom: 50px;
 }
 
 header {
@@ -98,12 +100,34 @@ header {
 }
 
 .top-line,
-.nav-top-line {
+.nav {
   display: flex;
   align-items: center;
 }
 
-.nav {
+.logo {
+  margin-right: 94px;
+}
+
+.logo__web,
+.logo__studio {
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  color: var(--accent-color);
+}
+
+.logo__studio--black-color {
+  color: #000000;
+}
+
+.studio-footer {
+  color: var(--two-main-color);
+}
+
+.menu {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -112,7 +136,7 @@ header {
   display: flex;
 }
 
-.link-nav {
+.menu__link {
   position: relative;
 
   padding: 32px 0;
@@ -120,7 +144,7 @@ header {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.current-studio::after {
+.menu__link--currentStudio::after {
   position: absolute;
   left: 0px;
   bottom: 0px;
@@ -135,7 +159,7 @@ header {
   border-radius: 2px;
 }
 
-.current-portfolio::after {
+.menu__link--currentPortfolio::after {
   position: absolute;
   left: 0px;
   bottom: 0px;
@@ -150,12 +174,8 @@ header {
   border-radius: 2px;
 }
 
-.item:not(:last-child) {
+.menu__item:not(:last-child) {
   margin-right: 50px;
-}
-
-.link-logo {
-  margin-right: 94px;
 }
 
 .contact {
@@ -169,41 +189,26 @@ header {
   display: flex;
 }
 
-.contact-link-icon {
+.contact__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.contact__link {
   display: flex;
   align-items: center;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link-icon-envelope {
-  fill: #757575;
-  margin-right: 10px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.link-icon-smartphone {
+.contact__icon {
   fill: #757575;
   margin-right: 10px;
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-link-icon:hover .link-icon-envelope,
-.contact-link-icon:focus .link-icon-envelope,
-.contact-link-icon:hover .link-icon-smartphone,
-.contact-link-icon:focus .link-icon-smartphone {
+.contact__link:hover .contact__icon,
+.contact__link:focus .contact__icon {
   fill: #2196f3;
-}
-
-.hidden-title {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
 }
 
 /* Шапка */
@@ -215,7 +220,7 @@ header {
   text-align: center;
 }
 
-.cap-title {
+.cap__title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -226,7 +231,7 @@ header {
   margin-bottom: 30px;
 }
 
-.cap-button {
+.cap__button {
   font-weight: bold;
   font-size: 16px;
   line-height: 1.87;
@@ -243,8 +248,8 @@ header {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.cap-button:hover,
-.cap-button:focus {
+.cap__button:hover,
+.cap__button:focus {
   color: var(--bg-color);
 }
 
@@ -264,39 +269,22 @@ header {
 
 /* Особенности */
 
-.features-list {
+.features {
   display: flex;
   flex-wrap: wrap;
   margin-right: -30px;
 }
 
-.features-item:not(:last-child) {
+.features__item:not(:last-child) {
   margin-right: 30px;
   flex-basis: calc((100% - 90px) / 4);
 }
 
-.features-item {
+.features__item {
   max-width: 270px;
 }
 
-.features-title {
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--main-text-color);
-  margin-bottom: 10px;
-}
-
-.features-text {
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: var(--title-color);
-}
-
-.features-img {
+.features__img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,26 +295,44 @@ header {
   margin-bottom: 30px;
 }
 
+.features__title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-text-color);
+  margin-bottom: 10px;
+}
+
+.features__text {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--title-color);
+}
+
 /* Чем мы занимаемся */
-.we-do {
+.working {
   text-align: center;
 }
 
-.we-do-list {
+.working__list {
   display: flex;
   flex-wrap: wrap;
   margin-right: -30px;
 }
-.we-do-item:not(:last-child) {
+
+.working__item:not(:last-child) {
   margin-right: 30px;
   flex-basis: calc((100% - 90px) / 3);
 }
 
-.we-do-item {
+.working__item {
   position: relative;
 }
 
-.we-do-item p {
+.working_text {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -348,15 +354,6 @@ header {
   background-color: rgba(47, 48, 58, 0.8);
 }
 
-.header-two-level {
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 1.16;
-  letter-spacing: 0.03em;
-
-  margin-bottom: 50px;
-}
-
 /* Наша команда */
 .team {
   max-width: 1600px;
@@ -366,13 +363,13 @@ header {
   background: #f5f4fa;
 }
 
-.team-list {
+.team__list {
   display: flex;
   flex-wrap: wrap;
   margin-right: -30px;
 }
 
-.team-card {
+.person {
   background: #ffffff;
   max-width: 270px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -381,17 +378,17 @@ header {
   border: 1px solid transparent;
 }
 
-.team-card:not(:last-child) {
+.person:not(:last-child) {
   margin-right: 30px;
 
   flex-basis: calc((100% - 90px) / 4);
 }
 
-.team-photo {
+.person__image {
   margin-bottom: 30px;
 }
 
-.team-title {
+.person__name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
@@ -399,7 +396,7 @@ header {
   margin-bottom: 10px;
 }
 
-.team-text {
+.person__position {
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
@@ -407,16 +404,16 @@ header {
   margin-bottom: 16px;
 }
 
-.social-icons {
+.personalNetworks {
   display: inline-flex;
   margin-bottom: 30px;
 }
 
-.social-icon-item + .social-icon-item {
+.personalNetworks__item + .personalNetworks__item {
   margin-left: 10px;
 }
 
-.social-link {
+.personalNetworks__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -428,28 +425,28 @@ header {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-icons .icon {
+.personalNetworks__icon {
   fill: #afb1b8;
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-link:hover,
-.social-link:focus {
+.personalNetworks__link:hover,
+.personalNetworks__link:focus {
   background-color: #2196f3;
 }
-.social-link:hover .icon,
-.social-link:focus .icon {
+.personalNetworks__link:hover .personalNetworks__icon,
+.personalNetworks__link:focus .personalNetworks__icon {
   fill: #fff;
 }
 
 /* Наши клиенты */
 
-.client {
+.clients {
   text-align: center;
 }
 
-.client-list {
+.clients__list {
   display: flex;
   flex-wrap: wrap;
   max-width: 1170px;
@@ -460,12 +457,12 @@ header {
   margin-bottom: 50px;
 }
 
-.client-item:not(:last-child) {
+.client:not(:last-child) {
   margin-right: 30px;
   flex-basis: calc((100% - 150px) / 6);
 }
 
-.client-link {
+.client__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -476,17 +473,17 @@ header {
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.client-link-icon {
+.client__icon {
   fill: #afb1b8;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.client-link:hover .client-link-icon,
-.client-link:focus .client-link-icon {
+.client__link:hover .client__icon,
+.client__link:focus .client__icon {
   fill: #2196f3;
 }
-.client-link:hover,
-.client-link:focus {
+.client__link:hover,
+.client__link:focus {
   border: 1px solid #2196f3;
 }
 
