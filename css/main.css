@@ -37,7 +37,7 @@ body {
 }
 
 .container {
-  width: 1200px;
+  max-width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
@@ -246,7 +246,6 @@ header {
 .features {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -30px;
 }
 
 .features__item:not(:last-child) {
@@ -911,4 +910,4 @@ header {
   text-decoration: underline;
   color: #2196f3;
 }
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=main.css.map */
